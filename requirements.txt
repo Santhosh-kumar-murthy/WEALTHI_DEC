@@ -1,0 +1,8 @@
+PyMySQL~=1.1.1
+pyotp~=2.9.0
+requests~=2.32.3
+pandas~=2.2.3
+python-dateutil~=2.9.0.post0
+paho-mqtt~=2.1.0
+pandas_ta
+numpy==1.26.4
