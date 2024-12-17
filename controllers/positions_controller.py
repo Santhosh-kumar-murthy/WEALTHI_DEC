@@ -302,20 +302,19 @@ class PositionsController:
             for option in options:
                 option_id = option['opt_position_id']
                 option_entry_price = option['position_entry_price']
-                option_direction = option['direction']
                 option_type = option['position_type']
-
                 # Get live trading price for the option
                 opt_exit_price = broker_controller.get_ltp_kite(kite, option['zerodha_instrument_token'])
 
                 # Determine profit/loss for the option
                 if option_type == 1:  # Buy option
-                    option_profit = opt_exit_price - option_entry_price if option_direction == 1 else option_entry_price - opt_exit_price
+                    option_profit = opt_exit_price - option_entry_price
                 elif option_type == 2:  # Sell option
-                    option_profit = option_entry_price - opt_exit_price if option_direction == 1 else opt_exit_price - option_entry_price
+                    option_profit = option_entry_price - opt_exit_price
                 else:
                     option_profit = 0
 
+                option_profit = option_profit * option['lot_size']
                 # Update the option position
                 cursor.execute('''
                     UPDATE opt_positions
