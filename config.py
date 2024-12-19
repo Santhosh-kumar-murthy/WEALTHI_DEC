@@ -34,11 +34,11 @@ observable_indices = [
         "token": 274441,
         "exchange": "BSE"
     },
-    {
-        "name": "NIFTYNXT50",
-        "token": 270857,
-        "exchange": "NSE"
-    },
+    # {
+    #     "name": "NIFTYNXT50",
+    #     "token": 270857,
+    #     "exchange": "NSE"
+    # },
     {
         "name": "NIFTY",
         "token": 256265,
